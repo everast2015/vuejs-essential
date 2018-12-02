@@ -16,6 +16,8 @@ import axios from 'axios'
 Vue.prototype.$axios = axios
 
 
+Vue.prototype.$ajax=axios //修改Vue的原型属性
+
 Vue.use(VueSweetalert2)
 Vue.use(Message)
 Vue.config.productionTip = false

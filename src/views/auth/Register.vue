@@ -81,7 +81,7 @@ export default {
         const user = {
           name: this.username,
           password: this.password,
-          avatar: `https://api.adorable.io/avatars/200/${this.username}.png`
+            avatar: `https://api.adorable.io/avatars/200/${this.username}.png`
         }
         const localUser = this.$store.state.user
 
@@ -91,7 +91,6 @@ export default {
           } else {
             this.login(user)
           }
-        } else {
           this.login(user)
         }
       }
