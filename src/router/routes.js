@@ -5,11 +5,17 @@ export default [
     component: () => import('@/views/auth/Register')
   },
   {
-    path: '/',
+    path: '/1',
     name: 'Home',
     alias: '/topics',
     component: () => import('@/views/Home')
   },
+  {
+      path: '/',
+      name: 'Home1',
+
+      component: () => import('@/views/Home2')
+    },
   // {
   //   path: '*',
   //   redirect: '/'

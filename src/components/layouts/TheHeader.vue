@@ -18,6 +18,7 @@
       <div id="top-navbar-collapse" :class="['collapse', 'navbar-collapse', { in: showCollapsedNav }]">
         <ul class="nav navbar-nav">
           <li v-for="(item, index) in navList" :class="{ active: index === activeNavIndex }">
+
             <a href="#" @click="changeNavIndex(index)">{{ item }}</a>
           </li>
         </ul>
@@ -45,9 +46,10 @@ export default {
         src: `${this.uploadsUrl}sites/ByvFbNlQYVwhvTyBgLdqitchoacDNznN.jpg`,
         title: 'VuejsCaff'
       },
-      navList: ['社区', '头条11', '问答', '教程'],
+      navList: ['首页', '校园板块'],
       activeNavIndex: 0,
-      showCollapsedNav: false
+      showCollapsedNav: false,
+      navurl: '/'
     }
   },
   beforeCreate() {
@@ -55,7 +57,9 @@ export default {
   },
   methods: {
     changeNavIndex(index) {
-      this.activeNavIndex = index
+      this.activeNavIndex = index;
+      console.log(index);
+      this.$router.push('/'+index);
     },
     toggleNav() {
       this.showCollapsedNav = !this.showCollapsedNav
