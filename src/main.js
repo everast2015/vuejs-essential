@@ -13,8 +13,16 @@ import { mockArticles } from './mock/data'
 import ls from './utils/localStorage'
 import './mock'
 import axios from 'axios'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+
+import Qs from 'qs'
+
+Vue.prototype.qs = Qs;
 Vue.prototype.$axios = axios
 
+Vue.use(ElementUI)//使用elementUI
+Vue.prototype.$ajax=axios //修改Vue的原型属性
 
 Vue.use(VueSweetalert2)
 Vue.use(Message)
@@ -40,6 +48,7 @@ const AddMockData = (() => {
     store.commit('UPDATE_ARTICLES', userArticles)
   }
 })()
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
@@ -47,4 +56,5 @@ new Vue({
   store,
   components: { App },
   template: '<App/>'
+
 })
