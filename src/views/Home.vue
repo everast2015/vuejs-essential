@@ -1,12 +1,13 @@
 <template>
   <div>
-    <Message :show.sync="msgShow" :type="msgType" :msg="msg"/>
+    <Message :show.sync="msgShow" :type="msgType" :msg="msg" />
     <div class="col-md-9 topics-index main-col">
       <div class="panel panel-default">
         <div class="panel-heading">
-         <ul class="list-inline topic-filter">
+          <ul class="list-inline topic-filter">
             <li v-for="item in filters">
-              <router-link v-title="item.title" :class="{ active: filter === item.filter }" :to="`/topics?filter=${item.filter}`">{{ item.name }}</router-link>
+              <router-link v-title="item.title" :class="{ active: filter === item.filter }" :to="`/topics?filter=${item.filter}`">{{
+                item.name }}</router-link>
             </li>
           </ul>
           <div class="clearfix"></div>
@@ -24,9 +25,9 @@
                   <abbr class="timeago">{{ article.date | moment('from') }}</abbr>
                 </div>
               </router-link>
-             <router-link :to="`/${article.uname}`" tag="div" class="avatar pull-left">
-               <img :src="article.uavatar" class="media-object img-thumbnail avatar avatar-middle">
-             </router-link>
+              <router-link :to="`/${article.uname}`" tag="div" class="avatar pull-left">
+                <img :src="article.uavatar" class="media-object img-thumbnail avatar avatar-middle">
+              </router-link>
               <router-link :to="`/articles/${article.articleId}/content`" tag="div" class="infos">
                 <div class="media-heading">
                   {{ article.title }}
@@ -39,8 +40,8 @@
           <Pagination :currentPage="currentPage" :total="total" :pageSize="pageSize" :onPageChange="changePage" />
         </div>
       </div>
-   </div>
-   <TheSidebar/>
+    </div>
+    <TheSidebar />
   </div>
 </template>
 
